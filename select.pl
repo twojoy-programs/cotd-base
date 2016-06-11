@@ -46,3 +46,9 @@ write TMP PAD;
 $soundBasename = *TMP;
 close(TMP);
 $soundfile = `sh -c \'ls | grep $soundBasename\'`;
+if($soundfile ~= /.txt/i)
+{
+  open(TTS, '|espeak -w /tmp/johnCena.wav') or crap("Can't call eSpeak!: $!");
+  unlink("$sounds/johnCena.wav");
+  system("sox /tmp/johnCena.wav $sounds/johnCena.wav");
+}

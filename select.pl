@@ -49,6 +49,11 @@ $soundfile = `sh -c \'ls | grep $soundBasename\'`;
 if($soundfile ~= /.txt/i)
 {
   open(TTS, '|espeak -w /tmp/johnCena.wav') or crap("Can't call eSpeak!: $!");
-  unlink("$sounds/johnCena.wav");
-  system("sox /tmp/johnCena.wav $sounds/johnCena.wav");
+  $text = `cat $soundfile`; # Stupid Unportable Hack to read file.
+  unlink("$sounds/johnCena.ogg");
+  system("sox /tmp/johnCena.wav $sounds/johnCena.ogg");
+} else
+{
+  unlink("$sounds/johnCena.ogg");
+  system("cp $soundfile $sounds/johnCena.ogg"); # Yet Another Stupid Unportable Hack
 }

@@ -1,4 +1,4 @@
-#!/bin/bash -c 'echo Don't run me! im a config file! && exit'
+
 # Example config file for the COTD program.
 '
 Copyright (c) 2016, Tucker R. Twomey

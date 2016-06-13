@@ -57,3 +57,8 @@ if($soundfile ~= /.txt/i)
   unlink("$sounds/johnCena.ogg");
   system("cp $soundfile $sounds/johnCena.ogg"); # Yet Another Stupid Unportable Hack
 }
+if($reportsounds)
+{
+  $date = `date`;
+  $soundrecord = $date . "      " . $soundfile;
+}

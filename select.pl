@@ -33,6 +33,7 @@ sub crap()
   $error = "$_ . \n";
   open(LOG, '+>', $logfile) or  die("Meta-error!!!: \n$error Can't open logfile: $!");
   print LOG $error;
+  close(LOG);
   exit(666);
 }
 chdir $sounds;
@@ -50,9 +51,11 @@ if($soundfile ~= /.txt/i)
 {
   open(TTS, '|espeak -w /tmp/currentSound.wav') or crap("Can't call eSpeak!: $!");
   $text = `cat $soundfile`; # Stupid Unportable Hack to read file.
+  print TTS $text;
+  close(TTS);
   unlink("$sounds/currentSound.ogg");
   system("sox /tmp/currentSound.wav $sounds/currentSound.ogg");
-} else
+} else #######
 {
   unlink("$sounds/currentSound.ogg");
   system("cp $soundfile $sounds/currentSound.ogg"); # Yet Another Stupid Unportable Hack

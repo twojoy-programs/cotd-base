@@ -30,7 +30,8 @@ sub crap()
 {
   $error = "$_ . \n";
   open(LOG, '+>', $logfile) or  die("Meta-error!!!: \n$error Can't open logfile: $!");
-  print LOG $error;
+  $header = "[" . `date` . "] "; # Unportable!
+  print LOG $header . $_ . "\n";
   close(LOG);
   exit(666);
 }

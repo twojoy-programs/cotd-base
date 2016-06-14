@@ -35,3 +35,10 @@ sub crap()
   close(LOG);
   exit(666);
 }
+sub log-m()
+{
+  open(LOG, '+>', $logfile) or crap("Can't open logfile: $!");
+  $header = "[" . `date` . "] "; # Unportable!
+  print LOG $header . $_ . "\n";
+  close(LOG);
+}

@@ -55,6 +55,5 @@ if($soundfile ~= /.txt/i)
 }
 if($reportsounds)
 {
-  $date = `date`;
-  $soundrecord = $date . "      " . $soundfile;
+  log-m("Daily sound is now: " . $soundfile);
 }

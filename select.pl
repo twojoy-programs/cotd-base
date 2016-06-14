@@ -1,5 +1,6 @@
 #!/bin/bash
 do cotd.conf.pl;
+do cotd-scripts.pl;
 # This is the script to select a coupon every day and write it to a file.
 # This should be a cronjob run every day.
 '
@@ -28,14 +29,6 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ';
-sub crap()
-{
-  $error = "$_ . \n";
-  open(LOG, '+>', $logfile) or  die("Meta-error!!!: \n$error Can't open logfile: $!");
-  print LOG $error;
-  close(LOG);
-  exit(666);
-}
 chdir $sounds;
 $rand = int(rand($numSounds));
 format PAD =

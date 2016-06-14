@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/perl
 do cotd.conf.pl;
 do cotd-scripts.pl;
 # This is the script to select a coupon every day and write it to a file.

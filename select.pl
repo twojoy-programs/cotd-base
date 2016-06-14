@@ -42,7 +42,8 @@ close(TMP);
 $soundfile = `sh -c \'ls | grep $soundBasename\'`;
 if($soundfile ~= /.txt/i)
 {
-  open(TTS, '|espeak -w /tmp/currentSound.wav') or crap("Can't call eSpeak!: $!");
+  open(TTS, '|espeak -w /tmp/currentSound.wav') or
+  crap("Can't call eSpeak!: $!");
   $text = `cat $soundfile`; # Stupid Unportable Hack to read file.
   print TTS $text;
   close(TTS);
@@ -51,7 +52,7 @@ if($soundfile ~= /.txt/i)
 } else #######
 {
   unlink("$sounds/currentSound.ogg");
-  system("cp $soundfile $sounds/currentSound.ogg"); # Yet Another Stupid Unportable Hack
+  system("cp $soundfile $sounds/currentSound.ogg"); # Yet Another Stupid Unportable Hack (^)
 }
 if($reportsounds)
 {

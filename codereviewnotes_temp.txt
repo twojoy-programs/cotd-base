@@ -1,0 +1,36 @@
+1) cotd-scripts.pl
+- function name "crap" is hilarious!!! :-)
+
+- for the #unportable dates, try using the following:
+use Time::Piece;
+# ...
+# ...
+
+my $date = localtime->strftime('%m/%d/%Y');
+
+
+# print $date; # yields "06/15/16"
+
+
+2) cotd-scripts.pl
+- lines 34 and 36 need semicolons
+
+- would a relative path solve the #unportable paths?
+E.g...
+replace:
+$logfile     = `pwd` . "/cotd.log"; # Unportable
+with:
+$logfile     = "./cotd.log"; # relative
+
+and replace:
+$sounds      = `pwd` . "/sounds";   # ditto
+with:
+$sounds      = "./sounds";   # ditto
+
+
+
+3) select.pl
+- I see the meat of the work is here!
+
+- I want to research a little more on how to perform lines 45-51 (and the other couple with system and unlink) in a more portable manner
+- more comments on this to come.

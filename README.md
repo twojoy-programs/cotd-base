@@ -10,8 +10,8 @@ COTD.
 Credits
 -------
 This program is written by:
-* [Tucker R. Twomey] (https://github.com/tuckertwo)
-* [Matt Twomey]
+* [Tucker R. Twomey]  (https://github.com/tuckertwo)
+* [Matt Twomey]       (https://github.com/vcello)
 
 [comment]: # (Other people who haven't written a single line of code, but have)
 [comment]: # (helped this project anyway:)

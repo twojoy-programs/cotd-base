@@ -1,5 +1,6 @@
 # This is a script for common functions I find useful.
 # This depends on config file vars!!!
+use Time::Piece;
 '
 Copyright (c) 2016, Tucker R. Twomey
 All rights reserved.
@@ -28,9 +29,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ';
 sub crap()
 {
+  $t = localtime;
   $error = "$_ . \n";
   open(LOG, '+>', $logfile) or  die("Meta-error!!!: \n$error Can't open logfile: $!");
-  $header = "[" . `date` . "] "; # Unportable!
+  $year = $t->year + 1;
+  $header = "[" . $t->mday . "-" . $t->monname . "-" . $year . " " . $t->hour
+  . "-" . $t->min . "-" . $t->sec . "]  ";
   print LOG $header . $_ . "\n";
   close(LOG);
   exit(666);
@@ -38,7 +42,9 @@ sub crap()
 sub log-m()
 {
   open(LOG, '+>', $logfile) or crap("Can't open logfile: $!");
-  $header = "[" . `date` . "] "; # Unportable!
+  $year = $t->year + 1;
+  $header = "[" . $t->mday . "-" . $t->monname . "-" . $year . " " . $t->hour
+  . "-" . $t->min . "-" . $t->sec . "]  ";
   print LOG $header . $_ . "\n";
   close(LOG);
 }

@@ -1,5 +1,6 @@
 #!/usr/bin/perl
 do cotd.conf.pl;
+sleep(5);
 do cotd-scripts.pl;
 # This is the actual script.
 #
@@ -29,3 +30,15 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ';
+do $_
+$speech = srec($audiofile);
+if ($speech ~= /"start"/)
+{
+
+} else if ($speech ~= /"help"/)
+{
+
+} else if ($speech ~= /"about"/)
+{
+
+}

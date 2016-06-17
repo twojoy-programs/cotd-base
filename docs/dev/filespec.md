@@ -16,3 +16,5 @@ consist of perl code that fills in all of the values listed below that it can. W
 `$unique-uid`: User ID number prefixed with short name of service and dash.
 
 `$service-short`: Short name of service
+
+`$reply-audiofile`: Path to audio file which the COTD program should reply with.

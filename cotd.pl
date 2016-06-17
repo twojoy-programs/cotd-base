@@ -34,11 +34,15 @@ do $_
 $speech = srec($audiofile);
 if ($speech ~= /"start"/)
 {
-
+  $prompt = 0;
+  system("cp $sounds/currentSound.ogg $reply_audiofile"); # Yet Another Stupid Unportable Hack (^)
 } else if ($speech ~= /"help"/)
 {
-
-} else if ($speech ~= /"about"/)
+  $prompt = 1;
+  system("cp $sounds/help.ogg $reply_audiofile"); # Yet Another Stupid Unportable Hack (^).
+}  else if ($speech ~= /"about"/)
 {
-
+  $prompt = 2;
+  system("cp $sounds/about.ogg.ogg $reply_audiofile"); # Yet Another Stupid Unportable Hack (^)
 }
+log-m("Cotd has been run: $pid $unique_uid $prompt ")

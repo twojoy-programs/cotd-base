@@ -13,8 +13,8 @@ consist of perl code that fills in all of the values listed below that it can. W
 
 `$service`: Full name of the service the user is speaking thru.
 
-`$unique-uid`: User ID number prefixed with short name of service and dash.
+`$unique_uid`: User ID number prefixed with short name of service and dash.
 
-`$service-short`: Short name of service
+`$service_short`: Short name of service
 
-`$reply-audiofile`: Path to audio file which the COTD program should reply with.
+`$reply_audiofile`: Path to audio file which the COTD program should reply with.

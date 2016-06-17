@@ -48,3 +48,7 @@ sub log-m()
   print LOG $header . $_ . "\n";
   close(LOG);
 }
+sub srec()
+{
+  
+}
